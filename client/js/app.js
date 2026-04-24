@@ -4,6 +4,7 @@ const API_BASE = 'http://localhost:3000/api';
 // Global state
 let allServices = [];
 let currentDragService = null;
+window.showServiceDetail = showServiceDetail;
 
 // Initialize app
 document.addEventListener('DOMContentLoaded', () => {
@@ -94,9 +95,10 @@ function displayServices(services) {
                 <div class="price">$${service.price}</div>
                 <div class="rating">${'★'.repeat(Math.floor(service.rating))}${service.rating % 1 ? '½' : ''} (${service.rating})</div>
                 <div class="card-actions">
-                    <button class="btn-save" onclick="saveService(${service.id})">Save</button>
-                    <button class="btn-hire" onclick="showHireModal(${service.id})">Hire</button>
-                </div>
+    <button class="btn-detail" onclick="showServiceDetail(${service.id})">View Details</button>
+    <button class="btn-save" onclick="saveService(${service.id})">Save</button>
+    <button class="btn-hire" onclick="showHireModal(${service.id})">Hire</button>
+</div>
             </div>
         </div>
     `).join('');
@@ -169,11 +171,39 @@ async function saveService(serviceId) {
     }
 }
 
+// Show service detail view
+function showServiceDetail(serviceId) {
+    const service = allServices.find(s => s.id === serviceId);
+    if (!service) return;
+
+    const modalBody = document.getElementById('modal-body');
+    modalBody.innerHTML = `
+        <div class="service-detail">
+            <img src="${service.image}" alt="${service.title}" class="detail-img">
+            <div class="detail-info">
+                <span class="category">${service.category}</span>
+                <h2>${service.title}</h2>
+                <p class="detail-desc">${service.description}</p>
+                <div class="detail-meta">
+                    <span class="detail-price">$${service.price}</span>
+                    <span class="detail-rating">★ ${service.rating}</span>
+                </div>
+                <div class="detail-actions">
+                    <button class="btn-save" onclick="saveService(${service.id}); closeModal();">♡ Save Service</button>
+                    <button class="btn-hire" onclick="closeModal(); showHireModal(${service.id});">Hire Now</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.getElementById('modal').style.display = 'block';
+}
+
 // Show hire modal
 function showHireModal(serviceId) {
     const service = allServices.find(s => s.id === serviceId);
     if (!service) return;
-    
+
     const modalBody = document.getElementById('modal-body');
     modalBody.innerHTML = `
         <div class="modal-service-detail">
@@ -188,15 +218,14 @@ function showHireModal(serviceId) {
             <button type="submit">Confirm Hire</button>
         </form>
     `;
-    
+
     document.getElementById('modal').style.display = 'block';
-    
+
     const form = document.getElementById('hire-form');
     form.onsubmit = async (e) => {
         e.preventDefault();
         const clientName = document.getElementById('client-name').value;
         const clientEmail = document.getElementById('client-email').value;
-        
         await hireService(serviceId, clientName, clientEmail);
         closeModal();
     };
