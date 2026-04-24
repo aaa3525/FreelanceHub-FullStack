@@ -36,7 +36,16 @@ function setupNavigation() {
             }
         });
     });
-    
+    // Explore Services button on home page
+const exploreBtn = document.querySelector('.explore-btn');
+if (exploreBtn) {
+    exploreBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showPage('services');
+        navLinks.forEach(l => l.classList.remove('active'));
+        document.querySelector('[data-page="services"]')?.classList.add('active');
+    });
+}
     // Mobile menu toggle
     if (mobileMenu) {
         mobileMenu.addEventListener('click', () => {
