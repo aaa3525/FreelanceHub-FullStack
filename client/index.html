@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreelanceHub - Find Your Perfect Freelancer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-rocket"></i>
+                <span>FreelanceHub</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" data-page="home" class="active">Home</a>
+                <a href="#" data-page="services">Services</a>
+                <a href="#" data-page="dashboard">Dashboard</a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Home Page -->
+        <div id="home-page" class="page active">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Find the Perfect Freelance Service</h1>
+                    <p>Connect with top-rated freelancers and get your projects done right</p>
+                    <button class="cta-btn" data-page="services">Explore Services</button>
+                </div>
+            </section>
+            
+            <section class="features">
+                <h2>Why Choose FreelanceHub?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-search"></i>
+                        <h3>Easy Search</h3>
+                        <p>Find services quickly with our powerful search and filters</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-star"></i>
+                        <h3>Verified Reviews</h3>
+                        <p>Read authentic reviews from real clients</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Secure Payments</h3>
+                        <p>Your transactions are always protected</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>24/7 Support</h3>
+                        <p>Get help whenever you need it</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Services Page -->
+        <div id="services-page" class="page">
+            <div class="services-header">
+                <h1>Browse Services</h1>
+                <div class="controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search services...">
+                    </div>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="Design">Design</option>
+                        <option value="Development">Development</option>
+                        <option value="Marketing">Marketing</option>
+                    </select>
+                    <select id="sort-by">
+                        <option value="default">Sort by</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="rating-desc">Rating: High to Low</option>
+                    </select>
+                </div>
+            </div>
+            <div id="services-container" class="services-grid"></div>
+        </div>
+
+        <!-- Dashboard Page -->
+        <div id="dashboard-page" class="page">
+            <h1>Your Dashboard</h1>
+            <div class="dashboard-tabs">
+                <button class="tab-btn active" data-tab="saved">Saved Services 🖤</button>
+                <button class="tab-btn" data-tab="hired">Hired Services ✓</button>
+            </div>
+            <div id="saved-tab" class="tab-content active">
+                <div id="saved-container" class="dashboard-grid"></div>
+            </div>
+            <div id="hired-tab" class="tab-content">
+                <div id="hired-container" class="dashboard-grid"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
