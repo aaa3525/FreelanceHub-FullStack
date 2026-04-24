@@ -1,26 +1,26 @@
 const express = require('express');
 const router = express.Router();
-const freelanceController = require('../controllers/freelanceController');
+const freelanceControllers = require('../controllers/freelanceControllers');
 
 // Get all services
-router.get('/services', freelanceController.getAllServices);
+router.get('/services', freelanceControllers.getAllServices);
 
 // Get single service
-router.get('/services/:id', freelanceController.getServiceById);
+router.get('/services/:id', freelanceControllers.getServiceById);
 
 // Add new service (bonus)
-router.post('/services', freelanceController.addService);
+router.post('/services', freelanceControllers.addService);
 
 // Save service
-router.post('/save', freelanceController.saveService);
+router.post('/save', freelanceControllers.saveService);
 
 // Hire service
-router.post('/hire', freelanceController.hireService);
+router.post('/hire', freelanceControllers.hireService);
 
 // Get saved services
-router.get('/saved', freelanceController.getSavedServices);
+router.get('/saved', freelanceControllers.getSavedServices);
 
 // Get hired services
-router.get('/hired', freelanceController.getHiredServices);
+router.get('/hired', freelanceControllers.getHiredServices);
 
 module.exports = router;
