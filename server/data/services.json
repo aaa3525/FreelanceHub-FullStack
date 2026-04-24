@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Professional Logo Design",
+    "category": "Design",
+    "price": 99.99,
+    "rating": 4.8,
+    "description": "Get a unique, professional logo that represents your brand identity. Includes 3 concepts and unlimited revisions.",
+    "image": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=300&h=200&fit=crop"
+  },
+  {
+    "id": 2,
+    "title": "WordPress Website Development",
+    "category": "Development",
+    "price": 499.99,
+    "rating": 4.9,
+    "description": "Custom WordPress website with responsive design, SEO optimization, and easy-to-use admin panel.",
+    "image": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=300&h=200&fit=crop"
+  },
+  {
+    "id": 3,
+    "title": "SEO Optimization Package",
+    "category": "Marketing",
+    "price": 299.99,
+    "rating": 4.7,
+    "description": "Complete SEO audit, keyword research, and on-page optimization to boost your search rankings.",
+    "image": "https://images.unsplash.com/photo-1571171638857-2e4d8b8ee6d1?w=300&h=200&fit=crop"
+  },
+  {
+    "id": 4,
+    "title": "Mobile App UI/UX Design",
+    "category": "Design",
+    "price": 399.99,
+    "rating": 4.9,
+    "description": "Beautiful and intuitive mobile app design with user-centered approach and interactive prototypes.",
+    "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=300&h=200&fit=crop"
+  },
+  {
+    "id": 5,
+    "title": "Social Media Management",
+    "category": "Marketing",
+    "price": 199.99,
+    "rating": 4.6,
+    "description": "Complete social media management including content creation, scheduling, and engagement tracking.",
+    "image": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=300&h=200&fit=crop"
+  },
+  {
+    "id": 6,
+    "title": "E-commerce Development",
+    "category": "Development",
+    "price": 799.99,
+    "rating": 4.8,
+    "description": "Full-featured e-commerce website with payment gateway integration, inventory management, and more.",
+    "image": "https://images.unsplash.com/photo-1556742049-0cfed2f52a40?w=300&h=200&fit=crop"
+  }
+]
