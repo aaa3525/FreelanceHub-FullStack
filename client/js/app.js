@@ -37,7 +37,7 @@ function setupNavigation() {
         });
     });
     // Explore Services button on home page
-const exploreBtn = document.querySelector('.explore-btn');
+const exploreBtn = document.querySelector('.cta-btn');
 if (exploreBtn) {
     exploreBtn.addEventListener('click', (e) => {
         e.preventDefault();
